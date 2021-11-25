@@ -15,18 +15,15 @@ circles.forEach((circle) => {
 });
 
 dzones.forEach((dzone) => {
-  dzone.addEventListener("dragenter", () => {
-    dzone.style.backgroundColor = "red";
-    // dzone.style.backgroundColor = mycol;
-  });
+  dzone.addEventListener("dragenter", () => {});
   dzone.addEventListener("dragover", (e) => {
     e.preventDefault();
   });
 
   dzone.addEventListener("drop", (e) => {
-    let droppedItemId = e.dataTransfer.getData("text");
-    let dropedItem = document.getElementById(droppedItemId);
-    dzone.append(dropedItem);
+    let droppedColorId = e.dataTransfer.getData("text");
+    console.log(droppedColorId);
+    dzone.style.backgroundColor = droppedColorId;
     console.log("item dropped");
   });
 });
